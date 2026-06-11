@@ -1,0 +1,80 @@
+/* Default Theme */
+body.theme-default {
+  --color-bg: #F5F5F7;
+  --color-panel: #FFFFFF;
+  --color-border: #E5E5EA;
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #6E6E73;
+  --color-accent: #007AFF;
+}
+
+/* Dark Theme */
+body.theme-dark {
+  --color-bg: #1D1D1F;
+  --color-panel: #2C2C2E;
+  --color-border: #424245;
+  --color-text-primary: #F5F5F7;
+  --color-text-secondary: #A1A1A6;
+  --color-accent: #0A84FF;
+}
+
+body.theme-dark .preview-a4 {
+  background: #1D1D1F;
+  color: #F5F5F7;
+}
+
+body.theme-dark .card {
+  background: #2C2C2E;
+  color: #F5F5F7;
+}
+
+body.theme-dark .card-caption {
+  border-top-color: #424245;
+}
+
+/* Glass Theme */
+body.theme-glass {
+  --color-bg: #F5F5F7;
+  --color-panel: rgba(255, 255, 255, 0.8);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #6E6E73;
+  --color-accent: #007AFF;
+}
+
+body.theme-glass .preview-a4 {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+body.theme-glass .card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+body.theme-glass .card-caption {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+body.theme-glass.glass-with-bg .preview-a4 {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn var(--transition-base);
+}
