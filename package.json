@@ -1,0 +1,64 @@
+{
+  "name": "catalogue-maker",
+  "version": "1.0.0",
+  "description": "Premium Apple-style catalogue editor for Electron",
+  "main": "main.js",
+  "homepage": "./",
+  "author": "roxymadreamonline-prog",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:portable": "electron-builder --win portable --publish never"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.1.1"
+  },
+  "devDependencies": {
+    "electron": "^latest",
+    "electron-builder": "^latest",
+    "electron-is-dev": "^latest",
+    "cross-env": "^latest"
+  },
+  "build": {
+    "appId": "com.cataloguemaker.app",
+    "productName": "Catalogue Maker",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": "x64"
+        },
+        {
+          "target": "portable",
+          "arch": "x64"
+        }
+      ],
+      "certificateFile": null,
+      "certificatePassword": null,
+      "signingHashAlgorithms": ["sha256"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Catalogue Maker"
+    },
+    "portable": {
+      "artifactName": "Catalogue-Maker-${version}-portable.exe"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ]
+  }
+}
